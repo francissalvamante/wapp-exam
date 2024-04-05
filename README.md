@@ -1,6 +1,6 @@
 ## Setup Instruction
 
-1. Clone repository ()
+1. Clone repository (git clone git@github.com:francissalvamante/wapp-exam.git)
 2. Open terminal and go to directory, run `npm i` to install necessary `node_modules` for running the application and `dev dependencies` needed for development
 3. Create `.env.local` file in the root folder of the project
    - Required `Environment Variables`:
