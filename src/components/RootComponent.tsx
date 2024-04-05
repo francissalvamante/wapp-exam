@@ -54,7 +54,6 @@ const RootComponent = (props: any) => {
   const loadedRight = () => {
     return (
       <>
-        <SearchLocation location={location} handleLocation={handleLocation} />
         <CurrentWeather />
         <div className="h-px bg-gray-400 w-full my-10" />
         <div className="flex flex-col items-center">
@@ -77,6 +76,7 @@ const RootComponent = (props: any) => {
             loading ? "items-center justify-center" : ""
           }`}
         >
+          <SearchLocation location={location} handleLocation={handleLocation} />
           {loading ? (
             <IconLoader3 className="animate-spin" size={60} />
           ) : (
