@@ -18,7 +18,7 @@ const historicalSlice = createSlice({
   name: "historical",
   initialState,
   reducers: {
-    setLoading: (state) => {
+    setHistoricalLoading: (state) => {
       state.loading = true;
     },
   },
@@ -66,5 +66,5 @@ export const getHistoricalRecord = createAsyncThunk(
   }
 );
 
-export const { setLoading } = historicalSlice.actions;
+export const { setHistoricalLoading } = historicalSlice.actions;
 export default historicalSlice.reducer;

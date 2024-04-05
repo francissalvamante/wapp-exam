@@ -37,7 +37,7 @@ const weatherSlice = createSlice({
   name: "weather",
   initialState,
   reducers: {
-    setLoading: (state) => {
+    setWeatherLoading: (state) => {
       state.loading = true;
     },
   },
@@ -76,5 +76,5 @@ export const getWeather = createAsyncThunk(
   }
 );
 
-export const { setLoading } = weatherSlice.actions;
+export const { setWeatherLoading } = weatherSlice.actions;
 export default weatherSlice.reducer;

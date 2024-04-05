@@ -2,9 +2,12 @@
 
 import config from "@/config";
 import { setCoords } from "@/state/coordinates/coordinatesSlice";
-import { getHistoricalRecord } from "@/state/historical/historicalSlice";
+import {
+  getHistoricalRecord,
+  setHistoricalLoading,
+} from "@/state/historical/historicalSlice";
 import { AppDispatch, RootState } from "@/state/store";
-import { getWeather } from "@/state/weather/weatherSlice";
+import { getWeather, setWeatherLoading } from "@/state/weather/weatherSlice";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -42,6 +45,8 @@ const SearchLocation = (props: any) => {
 
   const handleSelection = (s: { lat: number; lon: number }) => {
     setSuggestions([]);
+    dispatch(setWeatherLoading());
+    dispatch(setHistoricalLoading());
     dispatch(setCoords(s));
   };
 
