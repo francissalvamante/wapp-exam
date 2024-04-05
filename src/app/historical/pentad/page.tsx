@@ -8,7 +8,7 @@ import { kelvinToCelsius } from "@/_helpers/unitConverter";
 import { useEffect } from "react";
 import {
   getHistoricalRecord,
-  setLoading,
+  setHistoricalLoading,
 } from "@/state/historical/historicalSlice";
 import { IconLoader3 } from "@tabler/icons-react";
 
@@ -26,7 +26,7 @@ const PentadPage = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(setLoading());
+    dispatch(setHistoricalLoading());
     dispatch(getHistoricalRecord(coordinates));
   }, []);
 

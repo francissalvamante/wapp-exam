@@ -4,7 +4,7 @@ import { kelvinToCelsius } from "@/_helpers/unitConverter";
 import weatherIcon from "@/_helpers/weatherIcon";
 import {
   getHistoricalRecord,
-  setLoading,
+  setHistoricalLoading,
 } from "@/state/historical/historicalSlice";
 import { AppDispatch, RootState } from "@/state/store";
 import { IconLoader3, IconSearch } from "@tabler/icons-react";
@@ -27,7 +27,7 @@ const CustomPage = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const handleQuery = () => {
-    dispatch(setLoading());
+    dispatch(setHistoricalLoading());
     dispatch(
       getHistoricalRecord({
         ...coordinates,
