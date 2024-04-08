@@ -19,6 +19,9 @@ const config: Config = {
         snowy: "url('../../public/snowyBg.jpg')",
         thunderstorm: "url('../../public/thunderstormBg.jpg')",
       },
+      screens: {
+        xs: "320px",
+      },
     },
   },
   plugins: [require("flowbite/plugin")],

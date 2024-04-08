@@ -70,50 +70,46 @@ const RootComponent = (props: any) => {
 
   return (
     <>
-      <main
-        className={`flex flex-row-reverse min-h-screen bg-no-repeat bg-center bg-cover bg-cloudy`}
-      >
+      <main className="flex min-h-screen bg-no-repeat bg-center bg-cover bg-cloudy md:flex-row-reverse xs:flex-col">
         <div
-          className={`flex flex-col w-3/12 bg-white/0 backdrop-blur-md p-10 shadow-lg ${
+          className={`flex flex-col bg-white/0 backdrop-blur-md p-10 shadow-lg ${
             loading ? "items-center justify-center" : ""
-          }`}
+          } md:w-3/12 xs:w-full`}
         >
           <SearchLocation location={location} handleLocation={handleLocation} />
           {loading ? (
-            <IconLoader3 className="animate-spin" size={60} />
+            <IconLoader3 className="animate-spin space-x-5" size={60} />
           ) : (
             loadedRight()
           )}
         </div>
-        <div className="w-9/12 p-10 flex flex-col">
+        <div className="p-10 flex flex-col md:w-9/12 xs:w-full">
           {/** Content Header */}
-          <div className="w-full flex flex-row-reverse items-center">
-            <p className="text-lg">
-              {currentDate} | {currentTime}
-            </p>
-            <div className="mr-auto w-1/2 space-x-2">
+          <div className="w-full flex items-center md:flex-row-reverse xs:flex-col">
+            <div className="flex md:w-3/12 md:justify-end xs:w-full xs:justify-center">
+              <p className="text-lg">
+                {currentDate} | {currentTime}
+              </p>
+            </div>
+            <div className="mr-auto md:w-9/12 md:justify-start md:space-x-2 xs:w-full xs:space-x-1 xs:flex xs:justify-center my-2">
               <button
-                className="bg-white/30 backdrop-blur-md py-2 px-4 rounded-lg"
+                className="bg-white/30 backdrop-blur-md py-2 px-4 rounded-lg md:before:content-['5-day_Historical_Data'] xs:before:content-['5-day']"
                 onClick={() => router.push("/historical/pentad")}
-              >
-                5-day Historical Data
-              </button>
+              ></button>
               <button
-                className="bg-white/30 backdrop-blur-md py-2 px-4 rounded-lg"
+                className="bg-white/30 backdrop-blur-md py-2 px-4 rounded-lg md:before:content-['Custom_Historical_Data'] xs:before:content-['Custom']"
                 onClick={() => router.push("/historical/custom")}
-              >
-                Custom Historical Data
-              </button>
+              ></button>
             </div>
           </div>
           {/** Content Body */}
-          <div className="w-full h-full py-8 px-2 flex flex-row justify-center items-center space-x-2 relative">
+          <div className="w-full h-full py-8 px-2 flex flex-row justify-center items-center space-x-2 relative xs:space-y-4">
             <h1 className="text-3xl absolute top-0">Historical Data</h1>
             {props.children}
           </div>
           {/** Content Footer */}
           <div className="bottom-10 flex flex-col w-full mt-auto">
-            <h1 className="text-8xl mb-10 ml-auto capitalize">
+            <h1 className="mb-10 ml-auto capitalize md:text-8xl xs:text-4xl">
               {weather && weather.daily[0]?.weather[0]?.description}
             </h1>
             <hr className="h-1 bg-gray-200 border-0" />
