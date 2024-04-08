@@ -1,3 +1,5 @@
+"use client";
+
 import { RootState } from "@/state/store";
 import { useSelector } from "react-redux";
 import { DateTime } from "luxon";

@@ -1,3 +1,5 @@
+"use client";
+
 import { kelvinToCelsius, mpsToKph } from "@/_helpers/unitConverter";
 import degToCompass from "@/_helpers/windDirConverter";
 import { RootState } from "@/state/store";

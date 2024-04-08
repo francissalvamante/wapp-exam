@@ -1,3 +1,5 @@
+"use client";
+
 import weatherIcon from "@/_helpers/weatherIcon";
 import { RootState } from "@/state/store";
 import { useSelector } from "react-redux";

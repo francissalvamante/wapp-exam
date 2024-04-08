@@ -1,3 +1,5 @@
+"use client";
+
 import { AppDispatch, RootState } from "@/state/store";
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
